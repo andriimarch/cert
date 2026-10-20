@@ -83,7 +83,7 @@
     <div class="info-grid">
       <div class="info-row">
         <span class="label">Recipient:</span>
-        <span class="value" id="recipient-name">Friend Name</span>
+        <span class="value" id="recipient-name">Ahmed Karran</span>
       </div>
       <div class="info-row">
         <span class="label">Award Title:</span>
@@ -95,20 +95,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Automatically reads the name and award from the URL link
-    const params = new URLSearchParams(window.location.search);
-    
-    const name = params.get('name');
-    const award = params.get('award');
-
-    if (name) {
-      document.getElementById('recipient-name').innerText = name;
-    }
-    if (award) {
-      document.getElementById('award-title').innerText = award;
-    }
-  </script>
 </body>
 </html>
