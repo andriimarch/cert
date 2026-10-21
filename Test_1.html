@@ -6,13 +6,17 @@
   <title>Official Certificate Verification</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --text: #f8fafc;
+      --bg: #0b0f14;
+      --card-bg: #141b22;
+      --border-color: #2a3644;
+      --text: #f0f4f8;
+      --accent-gold: #d4af37;
       --success: #22c55e;
+      --subtext: #8b9bb0;
     }
+
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       display: flex;
@@ -22,16 +26,35 @@
       margin: 0;
       padding: 20px;
     }
+
     .card {
       background: var(--card-bg);
-      border: 1px solid #334155;
-      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
       padding: 32px;
-      max-width: 400px;
+      max-width: 440px;
       width: 100%;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+
+    /* Top Left Emblem / Image Positioning */
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .header-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+
     .status-badge {
       display: inline-flex;
       align-items: center;
@@ -39,12 +62,13 @@
       background: rgba(34, 197, 94, 0.1);
       color: var(--success);
       border: 1px solid rgba(34, 197, 94, 0.3);
-      padding: 6px 16px;
+      padding: 6px 14px;
       border-radius: 9999px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
+
     .pulse {
       width: 8px;
       height: 8px;
@@ -52,48 +76,98 @@
       border-radius: 50%;
       box-shadow: 0 0 8px var(--success);
     }
-    h1 { font-size: 1.5rem; margin: 0 0 8px 0; }
-    p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 24px; }
+
+    .title-container {
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 14px 0;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin: 0 0 4px 0;
+      color: var(--accent-gold);
+    }
+
+    .subtitle {
+      color: var(--subtext);
+      font-size: 0.85rem;
+      margin: 0;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
     .info-grid {
-      background: #0f172a;
-      border-radius: 12px;
+      background: #0d1218;
+      border: 1px solid #1e2936;
+      border-radius: 10px;
       padding: 16px;
       text-align: left;
       font-size: 0.9rem;
     }
+
     .info-row {
       display: flex;
       justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid #1e293b;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #1a232e;
     }
-    .info-row:last-child { border-bottom: none; }
-    .label { color: #64748b; }
-    .value { font-weight: 600; text-align: right; }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      color: var(--subtext);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .value {
+      font-weight: 600;
+      text-align: right;
+      color: var(--text);
+    }
   </style>
 </head>
 <body>
+
   <div class="card">
-    <div class="status-badge">
-      <span class="pulse"></span> 100% VERIFIED AUTHENTIC
+    <!-- Header with logo on the top left corner -->
+    <div class="card-header">
+      <img src="Gemini_Generated_Image_rwlz4lrwlz4lrwlz.jpg" alt="Emblem" class="header-logo">
+      
+      <div class="status-badge">
+        <span class="pulse"></span> 100% VERIFIED AUTHENTIC
+      </div>
     </div>
-    <h1>CERTIFICATE OF COMPLETION</h1>
-    <p>Issued by the Special Training Center «A-T.E.A.M.»</p>
+
+    <div class="title-container">
+      <h1>CERTIFICATE OF COMPLETION</h1>
+      <p class="subtitle">Special Training Center «A-T.E.A.M.»</p>
+    </div>
 
     <div class="info-grid">
       <div class="info-row">
-        <span class="label">Recipient:</span>
+        <span class="label">Recipient</span>
         <span class="value" id="recipient-name">Ahmed Karran</span>
       </div>
       <div class="info-row">
-        <span class="label">Completion:</span>
+        <span class="label">Course</span>
         <span class="value" id="award-title">HI CQB/Tactical Assault Team</span>
       </div>
       <div class="info-row">
-        <span class="label">Status:</span>
+        <span class="label">Status</span>
         <span class="value" style="color: #22c55e;">Active & Valid</span>
       </div>
     </div>
   </div>
+
 </body>
 </html>
